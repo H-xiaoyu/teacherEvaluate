@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis2.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.evaluate.demo.mapper.OfficeMapper">
+    <!--<resultMap id="OfficeResMap" type="entity.Office">-->
+        <!--<id property="id" column="office_id"></id>-->
+        <!--<result property="name" column="office_name"></result>-->
+        <!--<result property="deptId" column="dept_id"></result>-->
+        <!--<result property="deptName" column="dept_name"></result>-->
+    <!--</resultMap>-->
+
+    <insert id="insertOffice" parameterType="com.evaluate.demo.entity.Office">
+        insert into office(office_id,office_name,dept_id,dept_name)
+        values (#{id},#{name},#{deptId},#{deptName});
+    </insert>
+
+</mapper>

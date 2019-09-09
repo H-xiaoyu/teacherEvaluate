@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis2.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.evaluate.demo.mapper.UserMapper">
+  <resultMap id="UserResMap" type="com.evaluate.demo.entity.User">
+    <id property="id" column="id"></id>
+    <result property="name" column="name"></result>
+    <result property="password" column="password"></result>
+  </resultMap>
+
+  <resultMap id="AuthResMap" type="com.evaluate.demo.entity.Auth">
+    <result property="authAddr" column="auth_addr"></result>
+  </resultMap>
+
+
+  <select id="selectUserName" parameterType="String" resultMap="UserResMap">
+    select * from user where name = #{name};
+  </select>
+
+  <select id="selectAllUser" resultMap="UserResMap">
+    select * from user;
+  </select>
+
+  <!--<insert id="insertUser" parameterType="com.example.springboots.entity.User">-->
+    <!--insert into user(id,name,password) values (#{id},#{name},#{password});-->
+  <!--</insert>-->
+
+  <!--<select id="selectAuth" parameterType="String" resultMap="AuthResMap">-->
+       <!--SELECT a.* FROM userrole ur-->
+          <!--LEFT JOIN roleauth ra on ur.role_id=ra.role_id-->
+          <!--LEFT JOIN auth a on a.id=ra.auth_id-->
+       <!--WHERE ur.user_id=#{id}-->
+    <!--</select>-->
+</mapper>
