@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -17,11 +17,9 @@
     <div id="app">
         <p>{{message}}</p>
         <p>{{message}}</p>
-        <p>{{message}}</p>
-        <p>{{message}}</p>
     </div>
     <script>
-        var vm = new Vue({
+        new Vue({
             el: "#app",
             data: {
                 message: "Hello World!"
